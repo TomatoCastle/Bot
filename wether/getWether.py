@@ -1,11 +1,12 @@
 import threading
 import time
+import OnePleaceWether as op
 
 class getWether(threading.Thread):
     def __init__(self,uri):
         self.check_type_uri(uri)
         self.uri = uri
-        #self.wether = OnePleaceWether.OnePleaceWether(uri)
+        self.wether = op.OnePleaceWether(uri)
 
     def check_type_uri(self,uri):
         pass
