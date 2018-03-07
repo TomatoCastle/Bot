@@ -8,15 +8,13 @@ class getWether(threading.Thread):
         self.uri = uri
         self.wether = op.OnePleaceWether(uri)
 
-    def check_type_uri(self,uri):
-        pass
-
     def run(self):
-        pass
+        wether = self.wether.get_wether_with_update()
+        
 
     def get_wether(self):
         pass
     
-    def check_uri_type(self, uri):
+    def check_type_uri(self, uri):
         if not isinstance(uri,str):
             raise TypeError('\"uri\"\'s type must be \"str\"')
