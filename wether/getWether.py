@@ -12,7 +12,7 @@ class getWether(threading.Thread):
     def run(self):
         pass
         
-    def check_wether_is_rain(self):
+    def is_rain(self):
         pass
 
     def check_get_time(self):
