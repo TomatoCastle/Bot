@@ -16,17 +16,21 @@ class getWether(threading.Thread):
         pass
 
     def is_rain(self):
-        pass
+        return self.get_wether()['today'] == '雨'
+        #todo 3/10 雨時々の場合も雨と判定するようにする
 
-    def check_get_time(self,pushing_time):
-        return None
+    def is_now_pushing_time(self,pushing_time):
+        now_time = datetime.datetime.now()
+        return now_time.hour == pushing_time.hour
+            and now_time.minute == pushing_time.minute
 
     def get_wether(self):
-        #wether = self.wether.get_wether_with_update()
-        pass
+        return wether = self.wether.get_wether_with_update()
     
-    def update_uri(self):
-        pass
+    def update_uri(self,uri):
+        self.check_type_uri(uri)
+        self.uri = uri
+        self.wether = op.OnePleaceWether(uri)
 
     def check_type_time(self, pushing_time):
         if not isinstance(uri,datetime.datetime):
